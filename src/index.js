@@ -9,6 +9,7 @@ import initContentFeed from './actions/initContentFeed.js';
 import { setupPlayer } from './actions/player.js';
 
 const REDIRECT_URI = import.meta.env.VITE_SPOTIFY_REDIRECT_URI;
+const contentFeed = document.querySelector('.content-feed');
 
 function setupSearchHandler() {
     const searchInput = document.querySelector('.search-input');
@@ -40,5 +41,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         initApp(handleLogin, handleLogout, initContentFeed, setupSearchHandler);
         initSideMenu();
         setupPlayer();
+        contentFeed.style.minHeight = '100vh';
     }
 });
