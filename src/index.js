@@ -2,7 +2,7 @@ import.meta.glob('./styles/*.css', { eager: true });
 
 import Search from './actions/Search.js';
 import { handleLogin, handleLogout, requestAccessToken } from './actions/auth.js';
-import { setAccessToken } from './api/fetch.js';
+import { setAccessToken } from '../api/fetch.js';
 import initApp from './actions/initApp.js';
 import initSideMenu from './actions/initSideMenu.js';
 import initContentFeed from './actions/initContentFeed.js';

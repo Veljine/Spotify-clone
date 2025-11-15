@@ -1,4 +1,4 @@
-import { setAccessToken } from '../api/fetch.js';
+import { setAccessToken } from '../../api/fetch.js';
 
 const CLIENT_ID = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
 const REDIRECT_URI = import.meta.env.VITE_SPOTIFY_REDIRECT_URI_VERCEL || import.meta.env.VITE_SPOTIFY_REDIRECT_URI;

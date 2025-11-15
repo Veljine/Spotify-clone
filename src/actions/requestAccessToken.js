@@ -1,4 +1,4 @@
-import {setAccessToken} from '../api/fetch.js';
+import {setAccessToken} from '../../api/fetch.js';
 import initApp from './initApp.js';
 
 

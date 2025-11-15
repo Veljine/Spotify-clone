@@ -1,4 +1,4 @@
-import {getAccessToken} from '../api/fetch.js';
+import {getAccessToken} from '../../api/fetch.js';
 
 export default function initApp(handleLogin, handleLogout, initContentFeed, setupSearchHandler) {
 
