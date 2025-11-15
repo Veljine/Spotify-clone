@@ -1,0 +1,3 @@
+In order to run this project locally, you need to install ngrok.
+Then run "npm run dev" in the first terminal and "ngrok http <port that is displayed after the previous command>" in the second terminal.
+open the ngrok link from the ngrok terminal in your browser. For example: "https://noncivilizable-aydan-defenselessly.ngrok-free.dev/"
