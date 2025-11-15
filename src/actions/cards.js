@@ -17,7 +17,7 @@ function createSongCardHTML(track) {
     if (!track || typeof track !== 'object') return '';
     const rawTitle = track?.name || 'Unknown Title';
     const rawArtist = Array.isArray(track?.artists) ? track.artists.map(a => a?.name).filter(Boolean).join(', ') : 'Unknown Artist';
-    const coverUrl = track?.album?.images?.[0]?.url || '/public/noIcon.png';
+    const coverUrl = track?.album?.images?.[0]?.url || '/noIcon.png';
     const previewUrl = track?.preview_url || '';
 
     const isrc = track?.external_ids?.isrc || '';
@@ -28,7 +28,7 @@ function createSongCardHTML(track) {
     return `
         <div class="song-card" data-preview="${escapeAttr(previewUrl)}" data-type="track" data-has-preview="${!!previewUrl}" data-title="${escapeAttr(rawTitle)}" data-artist="${escapeAttr(rawArtist)}" data-isrc="${escapeAttr(isrc)}" data-external-url="${escapeAttr(externalUrl)}">
             <div class="cover-wrapper">
-                <img src="${escapeAttr(coverUrl)}" alt="Album Cover for ${title}" class="song-cover" onerror="this.onerror=null;this.src='/public/noIcon.png';" />
+                <img src="${escapeAttr(coverUrl)}" alt="Album Cover for ${title}" class="song-cover" onerror="this.onerror=null;this.src='/noIcon.png';" />
                 <button class="play-button" title="${previewUrl ? 'Play Preview' : 'Try Preview'}">
                     <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" fill="currentColor"  viewBox="0 0 24 24">
                         <path d="M8 5v14l11-7z"/>
@@ -47,7 +47,7 @@ function createSongCardHTML(track) {
 function createArtistCardHTML(artist) {
     if (!artist || typeof artist !== 'object') return '';
 
-    const photoUrl = artist?.images?.[0]?.url || '/public/noIcon.png';
+    const photoUrl = artist?.images?.[0]?.url || '/noIcon.png';
     const nameRaw = artist?.name || 'Unknown Artist';
     const previewUrl = artist?.preview_url || '';
     const externalUrl = artist?.external_urls?.spotify || '';
@@ -58,7 +58,7 @@ function createArtistCardHTML(artist) {
     return `
         <div class="artist-card" data-id="${escapeAttr(id)}" data-preview="${escapeAttr(previewUrl)}" data-type="artist" data-title="${escapeAttr(nameRaw)}" data-artist="${escapeAttr(nameRaw)}" data-external-url="${escapeAttr(externalUrl)}">
             <div class="cover-wrapper">
-                <img src="${escapeAttr(photoUrl)}" alt="Photo of ${name}" class="artist-photo" style="border-radius: 50%;" onerror="this.onerror=null;this.src='/public/noIcon.png';" />
+                <img src="${escapeAttr(photoUrl)}" alt="Photo of ${name}" class="artist-photo" style="border-radius: 50%;" onerror="this.onerror=null;this.src='/noIcon.png';" />
                 <button class="play-button" title="${previewUrl ? 'Play Preview' : 'Try Preview'}">
                     <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M8 5v14l11-7z"/>
@@ -91,7 +91,7 @@ function createItemCardHTML(item) {
         item?.owner?.display_name ||
         (Array.isArray(item?.artists) ? item.artists.map(a => a?.name).filter(Boolean).join(', ') : 'Spotify');
 
-    let coverUrl = '/public/noIcon.png';
+    let coverUrl = '/noIcon.png';
 
     if (Array.isArray(item?.images) && item.images.length) {
         const sortedImages = [...item.images].filter(img => img && typeof img === 'object').sort((a, b) => (b?.width || 0) - (a?.width || 0));
@@ -109,7 +109,7 @@ function createItemCardHTML(item) {
     return `
         <div class="song-card" data-id="${escapeAttr(id)}" data-preview="${escapeAttr(finalPreview)}" data-type="${escapeAttr(type)}" data-has-preview="${!!finalPreview}" data-title="${escapeAttr(rawTitle)}" data-artist="${escapeAttr(secondaryTextRaw)}" data-authors="${escapeAttr(authors)}" data-external-url="${escapeAttr(externalUrl)}">
             <div class="cover-wrapper">
-                <img src="${escapeAttr(coverUrl)}" alt="Cover for ${title}" class="song-cover" onerror="this.onerror=null;this.src='/public/noIcon.png';" />
+                <img src="${escapeAttr(coverUrl)}" alt="Cover for ${title}" class="song-cover" onerror="this.onerror=null;this.src='/noIcon.png';" />
                 <button class="play-button" title="${finalPreview ? 'Play Preview' : externalUrl ? 'Try Preview' : 'No Preview'}">
                     <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path d="M8 5v14l11-7z"/>
