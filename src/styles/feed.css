@@ -1,0 +1,157 @@
+.content-feed {
+    flex: 1;
+    overflow-y: auto;
+    background: linear-gradient(180deg, #222 0%, #111 90%);
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+    padding: 30px 30px 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.music-section {
+    margin-bottom: 3rem;
+    overflow-x: hidden;
+    white-space: normal;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+}
+.show-all {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+
+.show-all:hover {
+    color: white;
+}
+
+.song-list, .artist-list, .radio-list {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #333 #111;
+}
+
+.song-list::-webkit-scrollbar,
+.artist-list::-webkit-scrollbar,
+.radio-list::-webkit-scrollbar {
+    height: 8px;
+}
+
+.song-list::-webkit-scrollbar-thumb,
+.artist-list::-webkit-scrollbar-thumb,
+.radio-list::-webkit-scrollbar-thumb {
+    background-color: #333;
+    border-radius: 4px;
+}
+
+.song-list::-webkit-scrollbar-track,
+.artist-list::-webkit-scrollbar-track,
+.radio-list::-webkit-scrollbar-track {
+    background-color: #111;
+}
+
+.song-card, .artist-card, .radio-card {
+    flex: 0 0 160px;
+    width: 160px;
+    background-color: #181818;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: left;
+}
+
+.song-card:hover, .artist-card:hover, .radio-card:hover {
+    background-color: #282828;
+}
+
+.song-cover {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.song-title {
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.song-artist {
+    color: #b3b3b3;
+    font-size: 14px;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.artist-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.artist-name {
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.artist-role {
+    color: #b3b3b3;
+    font-size: 14px;
+    margin: 0;
+    text-align: center;
+}
+
+.radio-icon {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.radio-title {
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+}

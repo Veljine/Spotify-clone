@@ -1,0 +1,136 @@
+.footer-main {
+    margin-top: 0.5rem;
+    color: #B3B3B3;
+    padding: 3rem 1.5rem 1rem 1.5rem;
+}
+
+@media (min-width: 1024px) {
+    .footer-main {
+        padding: 3rem 8rem 1rem 8rem;
+    }
+}
+
+.footer-top {
+    margin-left: 4.3rem;
+    border-radius: 15px;
+    max-width: 96.6%;
+    background-color: #090909;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    color: #B3B3B3;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem 2rem 2rem 5rem;
+}
+
+.footer-nav-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .footer-nav-columns {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        max-width: 70%;
+    }
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.footer-column li {
+    margin-bottom: 0.75rem;
+}
+
+.column-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 0.5rem;
+}
+
+.footer-column a {
+    text-decoration: none;
+    color: #B3B3B3;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+    color: #1DB954;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+@media (max-width: 767px) {
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-nav-columns {
+        order: 1;
+    }
+    .social-icons {
+        order: 2;
+        justify-content: center;
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .social-icons {
+        flex-shrink: 0;
+        align-self: flex-start;
+    }
+}
+
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: #292929;
+    transition: background-color 0.2s ease;
+}
+
+.social-link:hover {
+    background-color: #1DB954;
+}
+
+.social-icon {
+    width: 1.1rem;
+    height: 1.1rem;
+    color: #FFFFFF;
+}
+
+.footer-bottom {
+    grid-column: 1 / -1;
+    padding: 1rem 0.5rem;
+}
+
+.separator-line {
+    border: 0;
+    height: 1px;
+    background-color: #2E2E2E;
+    margin-bottom: 1.5rem;
+}
+
+.copyright-text {
+    font-size: 0.8rem;
+    color: #A7A7A7;
+}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone</title>
+    <link rel="icon" type="image/x-icon" href="./public/favicon.ico" />
+    <script type="module" src="/src/index.js" defer></script>
+</head>
+<body>
+
+<header class="main-header">
+    <a href="/" class="logo-container">
+        <img src="/favicon.ico" alt="Spotify Logo" class="logo-icon" />
+    </a>
+
+    <div class="header-content-wrapper">
+
+        <div class="search-box">
+
+            <button class="icon-button">
+                <svg class="icon-svg" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0h6"/></svg>
+            </button>
+
+            <input type="text" placeholder="What do you want to play?" class="search-input" />
+
+            <button class="icon-button" style="filter: brightness(0) invert(1) invert(40%)">
+                <a href="https://open.spotify.com/search">
+                <img src="/catalog.png" alt="Browse Logo" class="icon-svg"/>
+                </a>
+            </button>
+        </div>
+
+        <nav class="nav-links">
+            <a href="https://www.spotify.com/us/premium/" class="nav-item divider">Premium</a>
+            <a href="https://support.spotify.com/us/" class="nav-item divider">Support</a>
+            <a href="https://open.spotify.com/download" class="nav-item divider">Download</a>
+        </nav>
+
+        <button class="login-button">
+            Log in
+        </button>
+    </div>
+</header>
+
+<div class="main-container">
+
+    <aside class="sidebar-menu">
+
+        <div class="menu-header">
+            <h2>Your Library</h2>
+        </div>
+
+        <nav class="menu-nav">
+            <ul>
+                <li><a href="#" class="menu-tab" data-category="playlists">Playlists</a></li>
+                <li><a href="#" class="menu-tab" data-category="artists">Artists</a></li>
+                <li><a href="#" class="menu-tab" data-category="albums">Albums</a></li>
+                <li><a href="#" class="menu-tab" data-category="podcasts">Podcasts</a></li>
+                <li><a href="#" class="menu-tab" data-category="tracks">Tracks</a></li>
+            </ul>
+        </nav>
+
+        <div class="menu-search">
+            <input type="text" placeholder="Search in your library..." class="sidebar-search-input" />
+        </div>
+
+        <div class="menu-section-title" id="sidebar-section-title">Playlists</div>
+        <div class="menu-list sidebar-items" aria-live="polite"></div>
+
+    </aside>
+
+    <section class="songs-section">
+
+        <div class="content-feed">
+
+            <div style="text-align:center; padding: 50px;">
+                <h2 class="section-title">Welcome to Spotify Clone</h2>
+                <p>Please log in to see your personalized music feed and recommendations.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="player-bar">
+        <div class="player-info">
+            <img class="player-cover" src="public/nothingPlaying.png" alt="" />
+            <div>
+                <p class="player-title">Nothing is playing</p>
+                <p class="player-artist"></p>
+            </div>
+        </div>
+
+        <div class="player-center">
+            <div class="player-controls">
+                <button class="control-btn prev" title="Previous" aria-label="Previous">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M6 6h2v12H6zM9.5 12l8.5 6V6z"/></svg>
+                </button>
+                <button class="player-playpause" title="Play/Pause" aria-label="Play or pause">
+                    <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                    <svg class="icon-pause" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                    </svg>
+                </button>
+                <button class="control-btn next" title="Next" aria-label="Next">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M16 6h2v12h-2zM6 18V6l8.5 6z"/></svg>
+                </button>
+            </div>
+            <div class="player-progress">
+                <span class="time current-time" aria-label="Current time">0:00</span>
+                <input type="range" min="0" max="30" value="0" step="0.01" class="progress-bar" aria-label="Seek" />
+                <span class="time duration" aria-label="Duration">0:30</span>
+            </div>
+        </div>
+
+        <div class="player-volume">
+            <button class="volume-icon" title="Volume" aria-label="Volume">
+                <svg class="icon-volume" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M3 10v4h4l5 5V5L7 10H3zm13.5 2a3.5 3.5 0 0 0-2.5-3.35v6.7a3.5 3.5 0 0 0 2.5-3.35zm2.5 0c0 3.03-2.13 5.54-5 6.21v-2.07a4.5 4.5 0 0 0 0-8.28V5.79c2.87.67 5 3.18 5 6.21z"/>
+                </svg>
+            </button>
+            <input type="range" min="0" max="1" step="0.01" value="0.8" class="volume-slider" aria-label="Volume" />
+        </div>
+    </div>
+
+    <div class="footer-top">
+
+        <div class="footer-nav-columns">
+
+            <div class="footer-column">
+                <h3 class="column-title">Company</h3>
+                <ul>
+                    <li><a href="https://newsroom.spotify.com/company-info/">About</a></li>
+                    <li><a href="https://www.lifeatspotify.com/jobs">Jobs</a></li>
+                    <li><a href="https://newsroom.spotify.com/">For the Record</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="column-title">Communities</h3>
+                <ul>
+                    <li><a href="https://artists.spotify.com/home">For Artists</a></li>
+                    <li><a href="https://developer.spotify.com/">Developers</a></li>
+                    <li><a href="https://ads.spotify.com/en-US/">Advertising</a></li>
+                    <li><a href="https://investors.spotify.com/home/default.aspx">Investors</a></li>
+                    <li><a href="https://spotifyforvendors.com/">Vendors</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3 class="column-title">Useful links</h3>
+                <ul>
+                    <li><a href="https://support.spotify.com/us/">Support</a></li>
+                    <li><a href="https://www.spotify.com/us/free/">Free Mobile App</a></li>
+                    <li><a href="https://newsroom.spotify.com/2023-11-29/wrapped-top-songs-worldwide-map/">Popular by Country</a></li>
+                    <li><a href="https://www.spotify.com/us/import-music/">Import your music</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column plan-column">
+                <h3 class="column-title">Premium Plans</h3>
+                <ul>
+                    <li><a href="https://support.spotify.com/us/article/premium-individual/">Premium Individual</a></li>
+                    <li><a href="https://support.spotify.com/us/article/duo-plan/?ref=related">Premium Duo</a></li>
+                    <li><a href="https://support.spotify.com/us/article/family-plan/?ref=related">Premium Family</a></li>
+                    <li><a href="https://support.spotify.com/us/article/premium-student/?ref=related">Premium Student</a></li>
+                    <li><a href="https://newsroom.spotify.com/2025-09-15/free-experience-updates-features-tips/">Free Tier</a></li>
+                    <li><a href="https://support.spotify.com/us/article/audiobooks-access-plan/">Audiobooks Access</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="social-icons">
+            <a href="https://www.instagram.com/spotify/" class="social-link" aria-label="Instagram">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </a>
+            <a href="https://x.com/Spotify" class="social-link" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon">
+                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                </svg>
+            </a>
+            <a href="https://www.facebook.com/Spotify/" class="social-link" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-icon">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="footer-bottom">
+    <hr class="separator-line">
+    <p class="copyright-text">© 2025 Spotify AB</p>
+</div>
+
+</body>
+</html>

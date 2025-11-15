@@ -1,0 +1,8 @@
+.songs-section {
+    margin-bottom: 0.5rem;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+
+    overflow: hidden;
+    padding: 0.5rem 0.5rem 0 4.2rem;
+}
