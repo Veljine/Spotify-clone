@@ -52,8 +52,8 @@ export default async function initContentFeed() {
     }
 
     try {
-        const seedTracks = chooseSeeds(validTopTracks, 2);
-        const seedArtists = chooseSeeds(validTopArtists, 2);
+        const seedTracks = chooseSeeds(topTracksData, 2);
+        const seedArtists = chooseSeeds(topArtistsData, 2);
 
         const params = new URLSearchParams({ limit: "25", market: "from_token" });
 
