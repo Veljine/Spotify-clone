@@ -1,4 +1,4 @@
-const DEEZER_BASE = '/api/deezer';
+const DEEZER_BASE = 'https://api.deezer.com';
 
 async function deezerFetch(path) {
     const url = `${DEEZER_BASE}${path.startsWith('/') ? '' : '/'}${path}`;
