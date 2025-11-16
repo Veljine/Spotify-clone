@@ -3,7 +3,7 @@ import { defineConfig } from 'vite';
 export default defineConfig({
     server: {
         allowedHosts: [
-            'noncivilizable-aydan-defenselessly.ngrok-free.dev'
+            'noncivilizable-aydan-defenselessly.ngrok-free.dev',
         ],
         proxy: {
             '/deezer': {

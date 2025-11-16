@@ -1,5 +1,5 @@
 import { resolvePreviewForCard as resolvePreviewForCardBasic, findDeezerPreviewByISRC, findDeezerPreviewByMeta } from '../../api/deezer.js';
-import { spotifyFetch } from '../../api/fetch.js';
+import { spotifyFetch } from '../api/fetch.js';
 
 let currentAudio = null;
 let currentActiveCardButton = null;

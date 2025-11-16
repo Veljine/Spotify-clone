@@ -1,4 +1,4 @@
-import { spotifyFetch } from '../../api/fetch.js';
+import { spotifyFetch } from '../api/fetch.js';
 import { createArtistCardHTML, createItemCardHTML, createSongCardHTML } from './cards.js';
 
 const cache = {
