@@ -1,5 +1,5 @@
 const DEEZER_BASE = import.meta.env.PROD
-    ? 'https://api.deezer.com'
+    ? '/api/deezer'
     : '/deezer';
 
 async function deezerFetch(path) {
