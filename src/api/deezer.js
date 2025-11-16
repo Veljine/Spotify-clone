@@ -3,7 +3,13 @@ const DEEZER_BASE = import.meta.env.PROD
     : '/deezer';
 
 async function deezerFetch(path) {
-    const url = `${DEEZER_BASE}${path.startsWith('/') ? '' : '/'}${path}`;
+    let url;
+    if (import.meta.env.PROD) {
+        url = `/api/deezer?path=${encodeURIComponent(path.replace(/^\/+/, ''))}`;
+    } else {
+        url = `/deezer${path.startsWith('/') ? '' : '/'}${path}`;
+    }
+
     try {
         const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
         if (!res.ok) return null;
